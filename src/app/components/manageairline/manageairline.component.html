@@ -1,0 +1,52 @@
+<h1 style="color:rgb(0, 0, 0);">AirLine List</h1>
+
+ 
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Flight Name</th>
+            <th>Logo</th>
+            <th>Flight Number</th>
+            <th>From Place</th>
+            <th>To Place</th>
+            <th>Start Date Time</th>
+            <th>End Date Time</th>
+            <th>Scheduled Days</th>
+            <th>Instrument Used</th>
+            <th>Business Class Seats</th>
+            <th>Non Business Class Seats</th>
+            <th>Ticket Cost</th>
+            <th>Number of Rows</th>
+            <th>Meal</th>
+            <th>Blocked</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let a of airline; index as i, first as f, last as l, even as e, odd as o"
+        [style.background]="e ? '#ccc': '#fff'">
+            <td>{{ a.airlineName }} </td>
+            <td><img src="{{a.uploadLogo}}"></td>
+            <td>{{ a.flightNumber }} </td>
+            <td>{{ a.fromPlace }}</td>
+            <td>{{ a.toPlace }}</td>
+            <td>{{ a.startdatetime }}</td>
+            <td>{{ a.enddatetime }}</td>
+            <td>{{ a.scheduleddays }}</td>
+            <td>{{ a.instrumentUsed }}</td>
+            <td>{{ a.tNoBusinessClassSeats }}</td>
+            <td>{{ a.tNoNonBusinessClassSeats }}</td>
+            <td>{{ a.ticketCost }}</td>
+            <td>{{ a.numberofRows }}</td>
+            <td>{{ a.meal }}</td>
+            <td><div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked />
+                <label class="form-check-label" for="flexSwitchCheckChecked"
+                  >{{a.isBlocked}}</label
+                >
+              </div></td>
+        </tr>
+    </tbody>
+</table>
+
+

@@ -1,0 +1,23 @@
+
+<div class="login-wrapper">
+    <img src="https://www.pngjoy.com/pngm/335/6270987_cognizant-logo-cognizant-technology-solutions-logo-png-download.png" alt="image">
+    <div class="card">
+        <div class="card-body">
+            <form class="form-signin" (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
+               <h1>Book My Flight</h1>
+               <h1 class="h3 mb-3 fw-normal"> sign in</h1>
+           
+               <div class="form-floating">
+                 <input type="email" class="form-control" name="email" id="floatingInput" placeholder="name@example.com" required autofocus ngModel>
+                 <label for="floatingInput">Email address</label>
+               </div>
+               <div class="form-floating">
+                 <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password" required ngModel>
+                 <label for="floatingPassword">Password</label>
+               </div>
+               <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+             </form>
+         </div>
+    </div>
+    
+</div>

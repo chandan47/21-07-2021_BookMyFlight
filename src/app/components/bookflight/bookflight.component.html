@@ -1,0 +1,135 @@
+<h1>Book Flight</h1>
+<form #bookflight="ngForm" (submit)="onSubmit()">
+    
+    <div class="form-group">
+        <div class="form-group row">
+            <label for="" class="col-sm-3 col-form-label" style="text-align:right;">Trip Type</label>
+            <div class="col-sm-6">
+        <div class="form-check">
+            <input type="radio" name="triptype" value="one way" class="form-check-input" [(ngModel)]="bookflightModel.triptype">
+            <label for="" class="form-check-label">One Way</label>
+        </div>
+
+   
+
+        <div class="form-check">
+            <input type="radio" name="triptype" value="Round Trip" class="form-check-input" [(ngModel)]="bookflightModel.triptype">
+            <label for="" class="form-check-label">Round trip</label>
+        </div>
+    </div></div></div>
+<br>
+
+    <div class="form-group">
+        <div class="form-group row">
+            <label for="" class="col-sm-3 col-form-label" style="text-align:right;">Name</label>
+            <div class="col-sm-6">
+        <input #name="ngModel" type="text" class="form-control" 
+        [class.is-invalid]="name.invalid && name.touched"  name="name" [(ngModel)]="bookflightModel.name" required>
+
+        <small class="text-danger" [class.d-none]="name.valid || name.untouched">This is required field</small>
+            </div></div>
+            <br>
+        
+        <div class="form-group">
+            <div class="form-group row">
+                <label for="" class="col-sm-3 col-form-label" style="text-align:right;">Email ID</label>
+                <div class="col-sm-6">
+            <input type="email" class="form-control" name="emailID" [(ngModel)]="bookflightModel.emailID">
+        </div>
+    </div></div></div>
+    <br>
+
+   
+    <div class="form-group">
+        <div class="form-group row">
+            <label for="" class="col-sm-3 col-form-label" style="text-align:right;">Start Date</label>
+            <div class="col-sm-6">
+        <input type="date" class="form-control" name="startdate" [(ngModel)]="bookflightModel.startdatetime">
+    </div></div></div>
+    <br>
+    
+
+    <div class="form-group">
+        <div class="form-group row">
+            <label for="" class="col-sm-3 col-form-label" style="text-align:right;">From Place</label>
+            <div class="col-sm-6">
+        <select class="form-control" [(ngModel)]="bookflightModel.fromPlace" name="fromPlace">
+            <option *ngFor="let fromPlace of fromPlaces">{{ fromPlace }}</option>
+        </select>
+    </div></div></div>
+    <br>
+    <div class="form-group">
+        <div class="form-group row">
+            <label for="" class="col-sm-3 col-form-label" style="text-align:right;">To Place</label>
+            <div class="col-sm-6">
+        <select class="form-control" [(ngModel)]="bookflightModel.toPlace" name="toPlace">
+            <option *ngFor="let toPlace of toPlaces">{{ toPlace }}</option>
+        </select>
+    </div></div></div>
+    <br>
+
+    <div class="form-group">
+        <div class="form-group row">
+            <label for="" class="col-sm-3 col-form-label" style="text-align:right;">Number Of Seats To Book</label>
+            <div class="col-sm-6">
+        <input type="number" #tNoBusinessClassSeats="ngModel" class="form-control"  name="noOfSeatsToBook" [(ngModel)]="bookflightModel.noOfSeatsToBook"> 
+    </div></div></div>
+    <br>
+
+    <div class="form-group">
+        <div class="form-group row">
+            <label for="" class="col-sm-3 col-form-label" style="text-align:right;">Meal Type</label>
+            <div class="col-sm-6">
+        <select class="form-control" [(ngModel)]="bookflightModel.mealType" name="mealType">
+            <option *ngFor="let mealType of mealTypes">{{ mealType }}</option>
+        </select>
+    </div></div></div>
+    <br>
+
+    <div class="form-group">
+        <div class="form-group row">
+            <label for="" class="col-sm-3 col-form-label" style="text-align:right;">Seat Number</label>
+            <div class="col-sm-6">
+        <input type="number" #seatNumber="ngModel" class="form-control"  name="seatNumber" [(ngModel)]="bookflightModel.seatNumber"> 
+    </div></div></div>
+    <br>
+
+    <div class="form-group">
+        <div class="form-group row">
+            <label for="" class="col-sm-3 col-form-label" style="text-align:right;">Discount Code</label>
+            <div class="col-sm-6">
+        <input type="text" #discountcode="ngModel" class="form-control"  name="discountcode" [(ngModel)]="bookflightModel.discountcode"> 
+    </div></div></div><br>
+    <!-- <div class="col-sm-2" form-group>
+        <label>Name:</label>
+        <input type="text" formControlName="name" />
+    </div> -->
+
+    <!-- <div class="col-sm-2">
+        <label>Email ID:</label>
+        <input type="text" formControlName="emailID" />
+        <span *ngIf="(eRegisterFormControl.emailID.touched || submitted) && eRegisterFormControl.emailID.errors?.emailID">
+            Please specify a valid email address
+        </span>
+    </div>
+    <div class="col-sm-2">
+        <label>No of seats booked:</label>
+        <input type="number" formControlName="noOfSeatsToBook" />
+    </div>
+    <div class="col-sm-2">
+        <label>Seat Number:</label>
+        <input type="number" formControlName="seatNumber" />
+    </div>
+    <div class="col-sm-2">
+        <label>Discount Code:</label>
+        <input type="text" formControlName="discountcode" />
+    </div> -->
+    
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- <button type="submit">Register</button>       -->
+            <input type="submit" id="close" [disabled]="bookflight.invalid" value="Submit" class="btn btn-primary">
+           <!-- <button button type="button" class="btn btn-outline-success btn-sm">Check Out</button> -->
+    </div>
+    </div>
+</form>
