@@ -19,7 +19,7 @@ submitted:boolean=false;
   
   public toPlaces=['Delhi','Mumbai'];
   public fromPlaces=['Bangalore','Goa'];
-  // public airlineModel = new Airline();
+  
   errorMessage: any;
   airlineModel : Airline={
     airlineName:"",
@@ -40,58 +40,24 @@ submitted:boolean=false;
     status:0
   }
 
-  // onSubmit(){
-  //     console.log(this.airlineModel);
-  // }
-
+  
   constructor(private builder : FormBuilder, private router:Router,private aService:AirlinedetailsService) { }
   
 
   ngOnInit(): void {
-
-  //   this.eRegisterForm = this.builder.group({
-  //     // name: ['',Validators.required],
-  //     // email: ['',Validators.email],
-  //     // password: ['',[Validators.required,Validators.minLength(4),Validators.maxLength(10)]],
-  //     airlineName:['',Validators.required],
-  //     uploadLogo:" ",
-  //     flightNumber:0,
-  //     fromPlace:" ",
-  //     toPlace:" ",
-  //     startdatetime:"10-10-2021",
-  //     enddatetime:"15-10-2021",
-  //     scheduleddays:" ",
-  //     instrumentUsed:" ",
-  //     tNoBusinessClassSeats:0,
-  //     tNoNonBusinessClassSeats:0,
-  //     ticketCost: 0,
-  //     numberofRows:0,
-  //     meal:" "
-
-  //   })
-  // }
-
-  // get eRegisterFormControl(){
-  //   return this.eRegisterForm.controls;
-  // }
-  // registerAirline(){
-  //   this.submitted = true;
-  //   console.log(this.eRegisterForm);
-  //   if(this.eRegisterForm.valid){
-  //     console.log('Form Submitted without errors...');
-  //   }
-
   }
   onSubmit(){
     this.aService.addAirLine(this.airlineModel).subscribe(()=> this.onAdded(),(error:any) => this.errorMessage =<any>error);
-    // this.airineDetailsService.getairlines().subscribe(results=> this.airlineDetails = this.airineDetailsService.getAirlinesFromObservable(results));
+    
 
 
 
   console.log(this.airlineModel);
+  
 }
 onAdded(): void {
 console.log("done");
+this.router.navigate(['/manageairline']);
 }
    
 }

@@ -1,4 +1,4 @@
-export class BookFlight{
+export class BookFlight{id?:number;
     name?:string;
     emailID?:string;
     noOfSeatsToBook?:number ;
@@ -6,11 +6,14 @@ export class BookFlight{
     seatNumber?:number;
     discountcode?:string;
     triptype?: string;
+    airlineName?:string;
     fromPlace?:string;
     toPlace?:string;
     startdatetime?:string;
+    totalPrice?:number;
 
-    constructor(public Name?:string, 
+    constructor( public Id?:number,
+        public Name?:string, 
         public emailid?:string, 
         public NoOfSeatsToBook?:number,
         public MealType?:string,
@@ -19,8 +22,9 @@ export class BookFlight{
         public TripType?:string,
         public FromPlace?:string,
         public ToPlace?:string,
-        public Startdatetime?:string
-
+        public Startdatetime?:string,
+        public AirlineName?:string,
+        public TotalPrice?:number
        ){
         this.name=Name,
         this.emailID=emailid,
@@ -30,8 +34,11 @@ export class BookFlight{
         this.discountcode=Discountcode,
         this.triptype=TripType,
         this.fromPlace=FromPlace,
-        this.ToPlace=ToPlace,
-        this.startdatetime=Startdatetime
+        this.toPlace=ToPlace,
+        this.startdatetime=Startdatetime,
+        this.airlineName=AirlineName,
+        this.id=Id,
+        this.totalPrice=TotalPrice
 
 
     }

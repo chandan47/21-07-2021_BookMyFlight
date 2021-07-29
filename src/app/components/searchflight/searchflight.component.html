@@ -1,4 +1,7 @@
-<h1>Search Flight</h1>
+
+<div class="card text-white bg-secondary mb-3" align="center" style="max-width: 50rem;">
+    <div class="card-header">Search Flight</div>
+    <div class="card-body">
 <form #searchflightForm="ngForm" (ngSubmit)="onSubmit()" >
 
     <br>
@@ -10,8 +13,10 @@
 </div>
 </div>
 <br>
-
- 
+<div align="center">
+                        <legend>OR</legend>
+                    </div>
+                    <br>
 <div class="form-group row">
 <label for="" class="col-sm-3 col-form-label" style="text-align:right;">From Place</label>
 <div class="col-sm-6">
@@ -36,3 +41,80 @@
 
 
 </form>
+</div>
+</div>
+
+<div class="container" *ngIf = "SearchHide">
+<h1 style="color:rgb(0, 0, 0);">Search Results</h1>
+
+
+
+
+<div class="card text-white bg-dark mb-3" align="center" style="max-width: 500px;" *ngFor="let a of airlineModel; index as i, first as f, last as l, even as e, odd as o">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{a.uploadLogo}}" class="img-fluid rounded-start" >
+      </div>
+      
+      <div class="col-md-8">
+        <div class="card-body" >
+          
+          <h5 class="card-title"><u> Flight Details</u></h5>
+         <p align="left" class="card-text"><legend><b><u>Airline Name :</u> {{ a.airlineName }}</b></legend><br>
+            <legend><b><u>Flight Number : </u>{{ a.flightNumber }}</b></legend><br>
+            <legend><b><u>From Place  :</u> {{ a.fromPlace}}</b></legend><br>
+            <legend><b><u>To Place :</u> {{ a.toPlace }}</b> </legend><br>
+            <legend><b><u>Departure Date :</u> {{ a.startdatetime }} </b></legend>
+            <legend><b><u>Ticket Price :</u> {{ a.ticketCost }}</b> </legend></p>
+            <input type="submit" (click)="GotoAddBookings(a.flightNumber)" value="Book Flight" class="btn btn-primary">
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+
+<!-- <table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>Flight Name</th>
+            <th>Logo</th>
+            <th>Flight Number</th>
+            <th>From Place</th>
+            <th>To Place</th>
+            <th>Start Date Time</th>
+            <th>End Date Time</th>
+            <th>Scheduled Days</th>
+            <th>Instrument Used</th>
+            <th>Business Class Seats</th>
+            <th>Non Business Class Seats</th>
+            <th>Ticket Cost</th>
+            <th>Number of Rows</th>
+            <th>Meal</th>
+            <th>Book Flight</th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let a of airlineModel; index as i, first as f, last as l, even as e, odd as o">
+        
+            <td>{{ a.airlineName }} </td>
+            <td><img src="{{a.uploadLogo}}"></td>
+            <td>{{ a.flightNumber }} </td>
+            <td>{{ a.fromPlace }}</td>
+            <td>{{ a.toPlace }}</td>
+            <td>{{ a.startdatetime }}</td>
+            <td>{{ a.enddatetime }}</td>
+            <td>{{ a.scheduleddays }}</td>
+            <td>{{ a.instrumentUsed }}</td>
+            <td>{{ a.tNoBusinessClassSeats }}</td>
+            <td>{{ a.tNoNonBusinessClassSeats }}</td>
+            <td>{{ a.ticketCost }}</td>
+            <td>{{ a.numberofRows }}</td>
+            <td>{{ a.meal }}</td>
+            <td><input type="submit" (click)="GotoAddBookings(a.flightNumber)" value="Book Flight" class="btn btn-primary"></td>
+        </tr>
+    </tbody>
+</table> -->
+</div>

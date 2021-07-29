@@ -1,5 +1,7 @@
-<h1>Add Airline</h1>
 
+<div class="card text-white bg-secondary mb-3" style="max-width: 50rem;">
+    <div class="card-header">Add Airline</div>
+    <div class="card-body">
 <form #airlineForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="form-group row">
         <label for="" class="col-sm-3 col-form-label" style="text-align:right;">Airline Name</label>
@@ -120,7 +122,7 @@
 
     <div class="form-group">
         <div class="form-group row">
-            <label for="" class="col-sm-3 col-form-label" style="text-align:right;">Ticket Cost</label>
+            <label for="" class="col-sm-3 col-form-label" style="text-align:right;">Ticket Price</label>
             <div class="col-sm-6">
         <input type="number" #ticketCost="ngModel" class="form-control"  name="ticketCost" [(ngModel)]="airlineModel.ticketCost"> 
     </div></div></div>
@@ -142,34 +144,7 @@
         </select>
     </div></div></div>
 
-    <!-- <div class="form-group row">
-        <label for="" class="col-sm-3 col-form-label" style="text-align:right;">Flight Number</label>
-        <div class="col-sm-6">
-            <input #flightNumber="ngModel" type="text" class="form-control"
-            [class.is-invalid]="flightNumber.invalid && flightNumber.touched"  name="planenumber" [(ngModel)]="airlineDetailsModel.flightNumber" required>
-            <small class="text-danger" [class.d-none]="flightNumber.valid || flightNumber.untouched">This is required field</small>
-        </div>
-    </div> -->
-
-
-<!-- 
-    <div class="form-group">
-        <label for="">Gender</label>
-        <div class="form-check">
-            <input type="radio" name="gender" value="male" class="form-check-input" [(ngModel)]="userModel.gender">
-            <label for="" class="form-check-label">Male</label>
-        </div>
-
-        <div class="form-check">
-            <input type="radio" name="gender" value="female" class="form-check-input" [(ngModel)]="userModel.gender">
-            <label for="" class="form-check-label">Female</label>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <input type="checkbox" class="foorm-check-input" [(ngModel)]="userModel.subscribe" name="subscribe">
-        <label for="" class="form-check-label">Subscribe</label>
-    </div> -->
+   
     <div class="form-group row">
       
         <div class="col-sm-6">
@@ -179,78 +154,6 @@
     
 
 </form>
-<!-- 
-<legend>Airline </legend>
-<form [formGroup]="eRegisterForm" (submit)="registerAirline()">
-    
-    <div class="col-sm-2" form-group>
-        <label>Airline Name:</label>
-        <input type="text" formControlName="airlineName" />
-        <span *ngIf="(eRegisterFormControl.name.touched || submitted) && eRegisterFormControl.name.errors?.required">
-            Airline Name is required
-        </span>
-    </div>
 
-    <div class="col-sm-2">
-        <label>Upload Logo:</label>
-        <input type="text" formControlName="uploadLogo" />
-    </div>
-    <div class="col-sm-2">
-        <label>Flight Number:</label>
-        <input type="number" formControlName="flightNumber" />
-    </div>
-     <div class="col-sm-2">
-        <label>Contact Address:</label>
-        <input type="text" formControlName="contactAddress" />
-    </div> 
-    <div class="col-sm-2">
-        <label>From Place:</label>
-        <input type="text" formControlName="fromPlace" />
-    </div>
-    <div class="col-sm-2">
-        <label>To Place:</label>
-        <input type="text" formControlName="toPlace" />
-    </div>
-    <div class="col-sm-2">
-        <label>Start Date Time:</label>
-        <input type="datetime" formControlName="startdatetime" />
-    </div>
-    <div class="col-sm-2">
-        <label>End Date Time:</label>
-        <input type="datetime" formControlName="enddatetime" />
-    </div>
-    <div class="col-sm-2">
-        <label>Scheduled Days:</label>
-        <input type="text" formControlName="scheduleddays" />
-    </div>
-    <div class="col-sm-2">
-        <label>Instrument Used:</label>
-        <input type="text" formControlName="instrumentUsed" />
-    </div>
-    <div class="col-sm-2">
-        <label>Business Class Seats:</label>
-        <input type="number" formControlName="tNoBusinessClassSeats" />
-    </div>
-    <div class="col-sm-2">
-        <label>Non Business Class Seats:</label>
-        <input type="number" formControlName="tNoNonBusinessClassSeats" />
-    </div>
-    <div class="col-sm-2">
-        <label>Ticket Cost:</label>
-        <input type="number" formControlName="ticketCost" />
-    </div>
-    <div class="col-sm-2">
-        <label>Number of Rows:</label>
-        <input type="number" formControlName="numberofRows" />
-    </div>
-    <div class="col-sm-2">
-        <label>Meal type:</label>
-        <input type="text" formControlName="meal" />
-    </div>
-    <div class="row">
-        <div class="col-xs-12">
-            <button type="submit">Register</button>       
-            <button button type="button" class="btn btn-outline-success btn-sm">Register</button>
-    </div>
-    </div>
-</form> --> 
+</div>
+</div>

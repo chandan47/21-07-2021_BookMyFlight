@@ -1,9 +1,9 @@
-<h1 style="color:rgb(0, 0, 0);">AirLine List</h1>
+<h1 style="color:rgb(0, 0, 0);">Search Results</h1>
 
  
 
-<table class="table">
-    <thead class="table-dark">
+<table class="table table-bordered">
+    <thead>
         <tr>
             <th>Flight Name</th>
             <th>Logo</th>
@@ -19,12 +19,12 @@
             <th>Ticket Cost</th>
             <th>Number of Rows</th>
             <th>Meal</th>
-            <th>Block Airline</th>
+            <th>Blocked</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let a of airline; index as i, first as f, last as l, even as e, odd as o"
-        >
+        [style.background]="e ? '#ccc': '#fff'">
             <td>{{ a.airlineName }} </td>
             <td><img src="{{a.uploadLogo}}"></td>
             <td>{{ a.flightNumber }} </td>
@@ -39,21 +39,7 @@
             <td>{{ a.ticketCost }}</td>
             <td>{{ a.numberofRows }}</td>
             <td>{{ a.meal }}</td>
-            <td>
-                <div class="form-check form-switch">
-                    <div *ngIf = "a.isBlocked">
-                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" (change)="UnBlockAirLine(a.flightNumber)" checked />
-                </div>
-                
-                  
-                <div *ngIf = "!a.isBlocked">
-                    <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" (change)="BlockAirline(a.flightNumber)" />
-                    
-                    </div>   
-                </div>
-                
-              </td>
-              
+        
         </tr>
     </tbody>
 </table>

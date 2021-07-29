@@ -13,6 +13,9 @@ import { SearchflightComponent } from './components/searchflight/searchflight.co
 import { ManageairlineComponent } from './components/manageairline/manageairline.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BookinghistoryComponent } from './components/bookinghistory/bookinghistory.component';
+import { SearchflightresultsComponent } from './components/searchflightresults/searchflightresults.component';
+import { ReportsComponent } from './components/reports/reports.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { HttpClientModule } from '@angular/common/http';
     BookflightComponent,
     SearchflightComponent,
     ManageairlineComponent,
-    LoginComponent
+    LoginComponent,
+    BookinghistoryComponent,
+    SearchflightresultsComponent,
+    ReportsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,43 @@
+<h1 style="color:rgb(0, 0, 0);">Booking History</h1>
+
+ 
+
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Email-ID</th>
+            <th>No Of Seats To Book</th>
+            <th>Meal Type</th>
+            <th>Seat Number</th>
+            <th>Discount Code</th>
+            <th>Trip Type</th>
+            <th>From Place</th>
+            <th>To Place</th>
+            <th>Departure Date</th>
+            <th>Total Price</th>
+            <th>Cancel</th>
+            
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let a of bookflight; index as i, first as f, last as l, even as e, odd as o">
+        
+            <td>{{ a.name }} </td>
+            <td>{{ a.emailID }} </td>
+            <td>{{ a.noOfSeatsToBook }}</td>
+            <td>{{ a.mealType }}</td>
+            <td>{{ a.seatNumber }}</td>
+            <td>{{ a.discountcode }}</td>
+            <td>{{ a.triptype }}</td>
+            <td>{{ a.fromPlace }}</td>
+            <td>{{ a.toPlace }}</td>
+            <td>{{ a.startdatetime }}</td>
+            <td>{{a.totalPrice}}</td>
+          <td><input type="submit" id="close" (click)="delete(a.id)" value="Cancel Booking" class="btn btn-danger"></td>
+         
+        </tr>
+    </tbody>
+</table>
+

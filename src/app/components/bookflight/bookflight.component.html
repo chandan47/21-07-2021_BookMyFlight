@@ -1,4 +1,8 @@
-<h1>Book Flight</h1>
+
+<div class="card text-white bg-secondary mb-3" style="max-width: 50rem;">
+    <div class="card-header">Book Flight</div>
+    <div class="card-body">
+      
 <form #bookflight="ngForm" (submit)="onSubmit()">
     
     <div class="form-group">
@@ -8,6 +12,9 @@
         <div class="form-check">
             <input type="radio" name="triptype" value="one way" class="form-check-input" [(ngModel)]="bookflightModel.triptype">
             <label for="" class="form-check-label">One Way</label>
+            
+
+            
         </div>
 
    
@@ -39,14 +46,23 @@
     </div></div></div>
     <br>
 
+    <div class="form-group">
+        <div class="form-group row">
+            <label for="" class="col-sm-3 col-form-label" style="text-align:right;">Airline Name</label>
+            <div class="col-sm-6">
+        <input type="text" class="form-control" name="airlineName" [(ngModel)]="bookflightModel.airlineName">
+    </div></div></div>
+    <br>
+
    
     <div class="form-group">
         <div class="form-group row">
-            <label for="" class="col-sm-3 col-form-label" style="text-align:right;">Start Date</label>
+            <label for="" class="col-sm-3 col-form-label" style="text-align:right;">Departure Date</label>
             <div class="col-sm-6">
-        <input type="date" class="form-control" name="startdate" [(ngModel)]="bookflightModel.startdatetime">
+        <input type="datetime-local" class="form-control" name="startdate" [(ngModel)]="bookflightModel.startdatetime">
     </div></div></div>
     <br>
+    
     
 
     <div class="form-group">
@@ -94,42 +110,44 @@
     </div></div></div>
     <br>
 
+    
+
     <div class="form-group">
         <div class="form-group row">
-            <label for="" class="col-sm-3 col-form-label" style="text-align:right;">Discount Code</label>
-            <div class="col-sm-6">
-        <input type="text" #discountcode="ngModel" class="form-control"  name="discountcode" [(ngModel)]="bookflightModel.discountcode"> 
-    </div></div></div><br>
-    <!-- <div class="col-sm-2" form-group>
-        <label>Name:</label>
-        <input type="text" formControlName="name" />
-    </div> -->
+        <label for="" class="col-sm-3 col-form-label" style="text-align:right;">Discount</label>
+        <div class="col-sm-6">
+        <input type="text" #discountcode="ngModel" class="form-control" name="discountcode" [(ngModel)]="bookflightModel.discountcode">
+        </div>
+        <div class="col-sm-3">
+            <input type="button" class="btn btn-success" value="Apply Discount" (click)="ApplyDiscount(bookflightModel.discountcode)  ">
+        </div>
+    </div>
+    </div>
+    <br>
 
-    <!-- <div class="col-sm-2">
-        <label>Email ID:</label>
-        <input type="text" formControlName="emailID" />
-        <span *ngIf="(eRegisterFormControl.emailID.touched || submitted) && eRegisterFormControl.emailID.errors?.emailID">
-            Please specify a valid email address
-        </span>
+    <div class="form-group">
+        <div class="form-group row">
+        <label for="" class="col-sm-3 col-form-label" style="text-align:right;">Ticket Price</label>
+        <div class="col-sm-6">
+        <input type="text" #totalPrice="ngModel" class="form-control" name="totalPrice" [(ngModel)]="bookflightModel.totalPrice">
+        </div>
     </div>
-    <div class="col-sm-2">
-        <label>No of seats booked:</label>
-        <input type="number" formControlName="noOfSeatsToBook" />
     </div>
-    <div class="col-sm-2">
-        <label>Seat Number:</label>
-        <input type="number" formControlName="seatNumber" />
-    </div>
-    <div class="col-sm-2">
-        <label>Discount Code:</label>
-        <input type="text" formControlName="discountcode" />
-    </div> -->
+    <br>
+
+
+
+ 
     
     <div class="row">
         <div class="col-xs-12">
-            <!-- <button type="submit">Register</button>       -->
+            
             <input type="submit" id="close" [disabled]="bookflight.invalid" value="Submit" class="btn btn-primary">
-           <!-- <button button type="button" class="btn btn-outline-success btn-sm">Check Out</button> -->
+          
     </div>
     </div>
 </form>
+
+
+    </div>
+  </div>

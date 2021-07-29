@@ -1,4 +1,5 @@
 export class Airline{
+    Id?:number;
     airlineName?:string;
     uploadLogo?:string;
     flightNumber?:number;
@@ -17,7 +18,8 @@ export class Airline{
     status?:number;
    
 
-    constructor(public AirlineName?:string, 
+    constructor(public ID?:number,
+        public AirlineName?:string, 
         public UploadLogo?:string, 
         public FlightNumber?:number,
         public ContactAddress?:string,
@@ -34,6 +36,7 @@ export class Airline{
         public Meal?:string,
         public IsBlocked?:boolean,
         public Status?:number){
+            
         this.airlineName=AirlineName;
         this.uploadLogo=UploadLogo;
         this.flightNumber=FlightNumber;
@@ -50,6 +53,6 @@ export class Airline{
         this.meal=Meal;
         this.isBlocked=IsBlocked;
         this.status=Status;
-
+        this.Id=ID;
     }
 }

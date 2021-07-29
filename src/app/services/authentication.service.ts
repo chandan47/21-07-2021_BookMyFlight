@@ -18,7 +18,7 @@ export class AuthenticationService {
         this.isAuthenticated= true;
         this.checkRole(signIn.getEmail());
         if(this.isUser == true){
-          this.router.navigate(['bookflight']);
+          this.router.navigate(['searchflight']);
         }else{
           this.router.navigate(['addairline']);
         }
